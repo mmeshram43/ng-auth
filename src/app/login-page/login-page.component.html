@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h2 class="display-6" > Log In </h2>
+            <hr>
+            <form #form="ngForm" >
+                <div class="form-group">
+                    <input class="form-control" type="text" id="id" name="id" placeholder="User ID" ngModel required >
+                </div>
+                <label></label>
+                <div class="form-group">
+                    <input class="form-control" type="text" id="password" name="password" placeholder="Password" ngModel required >
+                </div>
+                <hr>
+                <div class="alert alert-danger" role="alert" [hidden]="!loginError" >
+                    {{loginMessage}}
+                  </div>
+                <button class="btn btn-success" [disabled]="!form.valid" (click)="onLogin(form)" >Log In</button>
+            </form>
+        </div>
+        <div class="col">
+            <h2 class="display-6" > Register </h2>
+            <hr>
+            <form #register="ngForm" >
+                <div class="form-group">
+                    <input class="form-control" type="text" id="name" name="name" placeholder="Name" ngModel required >
+                </div>
+                <label></label>
+                <div class="form-group">
+                    <input class="form-control" type="text" id="email" name="email" placeholder="Email" ngModel required >
+                </div>
+                <label></label>
+                <div class="form-group">
+                    <input class="form-control" type="text" id="id" name="id" placeholder="User ID" ngModel required >
+                </div>
+                <label></label>
+                <div class="form-group">
+                    <input class="form-control" type="text" id="password" name="password" placeholder="Password" ngModel required >
+                </div>
+                <hr>
+                <div [class]="messageClass" role="alert" [hidden]="!isReg" >
+                    {{successMessage}}
+                  </div>
+                
+                <button class="btn btn-success" [disabled]="!register.valid" (click)="onRegister(register)" >Register</button>
+            </form>
+        </div>
+    </div>
+</div>
